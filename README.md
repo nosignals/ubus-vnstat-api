@@ -26,7 +26,7 @@ ubus and vnstat api for OpenWrt Devices
 ## Example
 You can call multiple parameter.
 Usage : 
-open your browser and type this link `http://yourip/api/ubus.php?network=yourSupportedInterfaces&system=parameter&vnstat=parameter`
+open your browser and type this link `http://yourip/api.php?network=yourSupportedInterfaces&system=parameter&vnstat=parameter`
 ### Javascript
 Example get Array JSON from this API
 ```js
@@ -59,7 +59,7 @@ network.interface.tether
 network.interface.wwan0
 ```
 #### How to call JSON network value.
-open your browser and type this link `http://yourip/api/ubus.php?network=yourSupportedInterfaces`
+open your browser and type this link `http://yourip/api/api.php?network=yourSupportedInterfaces`
 
 example JSON structure from this api
 ```json
@@ -121,7 +121,7 @@ System only has 2 parameter
 - 2. `info` = get information data, ex (uptime, cpu load, memory).
 
 #### How to call JSON system value.
-open your browser and type this link `http://yourip/api/ubus.php?system=yourparameter`
+open your browser and type this link `http://yourip/api/api.php?system=yourparameter`
 
 example JSON structure from this api with parameter `board`
 ```json
@@ -180,7 +180,7 @@ example JSON structure from this api with parameter `info`
 Vnstat has only saved Interface structure, if your vnstat configuration is `eth0`, you can only call with parameter `eth0`
 
 #### How to call JSON vnstat value.
-open your browser and type this link `http://yourip/api/ubus.php?vnstat=yourparameter`
+open your browser and type this link `http://yourip/api/api.php?vnstat=yourparameter`
 
 ## About
 nosignal is gone
