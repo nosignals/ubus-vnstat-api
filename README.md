@@ -17,7 +17,7 @@ ubus and vnstat api for OpenWrt Devices
 
 ## Installing API
 
-> 1. Install the required packages `php vnstat ubus`
+> 1. Install the required packages `php7 php7-cgi vnstat ubus` (i'm testing at `php7` & `vnstat`, not `vnstat2`)
 > 2. Download or Clone this repository
 > 3. Extract downloads file
 > 4. **Move** or **Copy** folder `api` to `/www/`
