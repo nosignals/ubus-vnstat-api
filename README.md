@@ -20,7 +20,7 @@ ubus and vnstat api for OpenWrt Devices
 > 1. Install the required packages `php vnstat ubus`
 > 2. Download or Clone this repository
 > 3. Extract downloads file
-> 4. Go to folder `api` and **Move** or **Copy** to `/www/`
+> 4. **Move** or **Copy** folder `api` to `/www/`
 > 5. API is ready to use
 
 ## Example
@@ -46,7 +46,7 @@ print_r($arr);
 
 ## Structure
 ### Network
-Network has some structure, You can check supported network interface from Terminal 
+Network has some structure, You can check supported network interface from Terminal, 
 Copy this command and paste at your terminal `ubus list | grep network.interface`, to check supported network interface.
 sample data results
 ```bash
@@ -61,7 +61,7 @@ network.interface.wwan0
 #### How to call JSON network value.
 open your browser and type this link `http://yourip/api/ubus.php?network=yourSupportedInterfaces`
 
-example JSON structure from this api if normally
+example JSON structure from this api
 ```json
 {
    "status":true,
@@ -183,6 +183,10 @@ Vnstat has only saved Interface structure, if your vnstat configuration is `eth0
 open your browser and type this link `http://yourip/api/ubus.php?vnstat=yourparameter`
 
 ## About
-nosignal
+nosignal is gone
 
-### Salam Copybara
+## Credits
+> - [nosignal](https://github.com/nosignals)
+> - [indoWRT](https://www.facebook.com/groups/728998271085718)
+> - [DBAI](https://www.facebook.com/groups/421688359852864)
+> - GTerongers
