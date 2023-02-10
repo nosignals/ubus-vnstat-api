@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>ETH0 USAGE</h2>
+<p id="eth0"></p>
+<h2>SYSTEM BOARD</h2>
+<p id="hostname"></p>
+<p id="model"></p>
+<h2>NETWORK</h2>
+<p id="ipv4"></p>
+<p id="uptime"></p>
+<h2>netdata</h2>
+<p id="upstream"></p>
+<p id="downstream"></p>
+<h2>temp</h2>
+<p id="temp"></p>
+
+<script>
+//document.getElementById("demo").innerHTML = obj.name + ", " + obj.birth;
+getData();
+function getData(){
+        fetch('http://192.168.1.1/api/api.php?system=board&vnstat=eth0&network=wwan0&netdata=temp').then(function (response) {
+            return response.json();
+        }).then(function (data){
+            document.getElementById("eth0").innerHTML = (data.vnstat.data[0].interfaces[0].traffic.total.tx/1000000).toFixed(2) + ' GB';
+            document.getElementById("hostname").innerHTML = data.system.data[0].hostname;
+            document.getElementById("model").innerHTML = data.system.data[0].model;
+			document.getElementById("ipv4").innerHTML = data.network.data[0]['ipv4-address'][0].address;
+            document.getElementById("uptime").innerHTML = data.network.data[0].uptime + ' second';
+            document.getElementById("temp").innerHTML = data.netdata.data[0].temp;
+        }).catch(function (error) {
+            console.log(error);
+        });
+        fetch('http://192.168.1.1/api/api.php?netdata=net.eth0').then(function (response) {
+            return response.json();
+        }).then(function (data){
+            document.getElementById("upstream").innerHTML = data.netdata.data[0].data[0][1];
+            document.getElementById("downstream").innerHTML = data.netdata.data[0].data[0][2];
+        }).catch(function (error) {
+            console.log(error);
+        });
+}
+</script>
+
+</body>
+</html>
