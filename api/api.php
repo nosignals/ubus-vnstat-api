@@ -84,7 +84,7 @@ echo '}';
 function netdataParse($param, $cond)
 {
     if ($param === "info") {
-        $getData = file_get_contents("http://192.168.1.1:19999/api/v1/info");
+        $getData = file_get_contents("http://127.0.0.1:19999/api/v1/info");
         echo $getData;
         echo '], "error": null}';
     }
