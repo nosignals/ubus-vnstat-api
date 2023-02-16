@@ -11,6 +11,9 @@ ubus, vnstat, netdata api for OpenWrt Devices
 - Get latest Update `VNSTAT` data JSON
 - Get latest Update `NETDATA` data JSON
 
+## DEMO
+- API : https://signdev.my.id/api/api.php?yourparameter
+- Website : https://signdev.my.id/signdash
 
 ## Requirement
 
